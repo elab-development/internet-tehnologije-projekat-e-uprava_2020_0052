@@ -24,6 +24,6 @@ class Zahtev extends Model
     public function usluga()
     {
         return $this->belongsTo(Usluga::class);
-    }
+    }
 }
 
