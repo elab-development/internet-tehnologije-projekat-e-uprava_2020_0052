@@ -19,6 +19,7 @@ class UslugaResurs extends JsonResource
             'nazivUsluge' => $this->nazivUsluge,
             'opisUsluge'=>$this->opisUsluge,
             'kategorija' => new KategorijaResurs($this->kategorija),
+            'cenaUsluge' => $this->cenaUsluge
         ];
     }
 }

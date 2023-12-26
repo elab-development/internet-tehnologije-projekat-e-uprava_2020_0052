@@ -34,6 +34,7 @@ class UslugaController extends BaseController
             'nazivUsluge' => 'required',
             'opisUsluge' => 'required',
             'kategorija_id' => 'required',
+            'cenaUsluge'=> 'required'
         ]);
 
         if ($validator->fails()) {
@@ -44,6 +45,7 @@ class UslugaController extends BaseController
         $usluga->nazivUsluge = $request->nazivUsluge;
         $usluga->opisUsluge = $request->opisUsluge;
         $usluga->kategorija_id = $request->kategorija_id;
+        $usluga->cenaUsluge=$request->cenaUsluge;
         $usluga->save();
         return $this->success(new UslugaResurs($usluga), 'Uspesno kreirana usluga.');
     }
@@ -57,6 +59,7 @@ class UslugaController extends BaseController
             'nazivUsluge' => 'required',
             'opisUsluge' => 'required',
             'kategorija_id' => 'required',
+            'cenaUsluge'=> 'required'
         ]);
 
         if ($validator->fails()) {
@@ -68,6 +71,7 @@ class UslugaController extends BaseController
             $usluga->nazivUsluge = $request->nazivUsluge;
             $usluga->opisUsluge = $request->opisUsluge;
             $usluga->kategorija_id = $request->kategorija_id;
+            $usluga->cenaUsluge=$request->cenaUsluge;
             $usluga->save();
             return $this->success(new UslugaResurs($usluga), 'Uspesno izmenjena usluga.');
         } else {

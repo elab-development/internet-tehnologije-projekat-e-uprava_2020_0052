@@ -14,6 +14,7 @@ class Usluga extends Model
         'nazivUsluge',
         'opisUsluge',
         'kategorija_id',
+        'cenaUsluge'
     ];
     
     public function kategorija()
