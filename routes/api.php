@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/login', 'App\Http\Controllers\UserController@login');
 Route::post('/register', 'App\Http\Controllers\UserController@register');
+Route::get('/usluge', 'App\Http\Controllers\UslugaController@index');
 
 //sanctum middleware
 
@@ -30,7 +31,6 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/zahtevi', 'App\Http\Controllers\ZahtevController@store');
     Route::put('/zahtevi/{id}', 'App\Http\Controllers\ZahtevController@update');
     Route::delete('/zahtevi/{id}', 'App\Http\Controllers\ZahtevController@destroy');
-    Route::get('/usluge', 'App\Http\Controllers\UslugaController@index');
     Route::get('/usluge/{id}', 'App\Http\Controllers\UslugaController@show');
     Route::post('/usluge', 'App\Http\Controllers\UslugaController@store');
     Route::put('/usluge/{id}', 'App\Http\Controllers\UslugaController@update');
