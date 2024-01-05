@@ -37,4 +37,6 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::delete('/usluge/{id}', 'App\Http\Controllers\UslugaController@destroy');
     Route::get('/zahtevi-paginacija', 'App\Http\Controllers\ZahtevController@paginacija');
     Route::get('/zahtevi-korisnika/{id}', 'App\Http\Controllers\ZahtevController@zahteviKorisnika');
+    Route::get('/problemi', 'App\Http\Controllers\ProblemController@index');
+    Route::post('/problemi', 'App\Http\Controllers\ProblemController@store');
 });
