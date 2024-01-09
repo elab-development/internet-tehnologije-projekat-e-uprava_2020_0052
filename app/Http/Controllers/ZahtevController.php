@@ -31,7 +31,6 @@ class ZahtevController extends BaseController
         $input = $request->all();
 
         $validator = Validator::make($input, [
-            'datumUsluge' => 'required',
             'user_id' => 'required',
             'usluga_id' => 'required',
         ]);
