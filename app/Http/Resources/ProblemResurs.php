@@ -14,13 +14,15 @@ class ProblemResurs extends JsonResource
      */
     public function toArray(Request $request): array
     {
+        $user = User::find($this->user_id);
         return [
             'id' => $this->id,
             'nazivProblema' => $this->nazivProblema,
             'opisProblema' => $this->opisProblema,
-            'user_id' => new UserResurs($this->user),
+            'user' => new UserResurs($user),
             'datumPrijave' => $this->datumPrijave,
             'status' => $this->status
         ];
     }
+
 }
