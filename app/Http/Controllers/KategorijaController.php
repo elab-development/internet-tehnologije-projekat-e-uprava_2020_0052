@@ -12,14 +12,16 @@ class KategorijaController extends BaseController
     public function index()
     {
         $kategorije = Kategorija::all();
-        return $this->success(KategorijaResurs::collection($kategorije), 'Uspesno prikazane kategorije.');
+        return $this->success(KategorijaResurs::collection($kategorije), 
+        'Uspesno prikazane kategorije.');
     }
 
     public function show($id)
     {
         $kategorija = Kategorija::find($id);
         if ($kategorija) {
-            return $this->success(new KategorijaResurs($kategorija), 'Uspesno prikazana kategorija.');
+            return $this->success(new KategorijaResurs($kategorija), 
+            'Uspesno prikazana kategorija.');
         } else {
             return $this->error('Kategorija ne postoji.', null, 404);
         }
