@@ -96,4 +96,20 @@ class ZahtevController extends BaseController
         $zahtevi = Zahtev::paginate($pageSize);
         return $this->success(ZahtevResurs::collection($zahtevi), 'Uspesno prikazani zahtevi.');
     }
+    public function zahteviPoUsluzi($id)
+    {
+        $zahtevi = Zahtev::where('usluga_id', $id)->get();
+        return $this->success(ZahtevResurs::collection($zahtevi), 'Uspesno prikazani zahtevi.');
+    }
+
+    public function chartData()
+    {
+        $podaci = DB::table('zahtevi')
+            ->select('nazivUsluge', DB::raw('count(*) as total'))
+            ->join('usluge', 'zahtevi.usluga_id', '=', 'usluge.id')
+            ->groupBy('nazivUsluge')
+            ->get();
+
+        return $this->success($podaci, 'Uspesno prikazani podaci.');
+    }
 }

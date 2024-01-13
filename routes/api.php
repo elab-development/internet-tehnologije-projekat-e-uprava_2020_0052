@@ -39,4 +39,6 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/zahtevi-korisnika/{id}', 'App\Http\Controllers\ZahtevController@zahteviKorisnika');
     Route::get('/problemi', 'App\Http\Controllers\ProblemController@index');
     Route::post('/problemi', 'App\Http\Controllers\ProblemController@store');
+    Route::get('/zahtevi-usluge/{id}', 'App\Http\Controllers\ZahtevController@zahteviPoUsluzi');
+    Route::get('/chart', 'App\Http\Controllers\ZahtevController@chartData');
 });
