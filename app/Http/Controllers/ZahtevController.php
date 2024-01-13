@@ -6,6 +6,7 @@ use App\Http\Resources\ZahtevResurs;
 use App\Models\Zahtev;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class ZahtevController extends BaseController
 {
